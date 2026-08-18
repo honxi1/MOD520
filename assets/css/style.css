@@ -377,80 +377,66 @@ a:hover { text-decoration: underline; }
 .tools-line { margin: 14px 0 0 0; font-size: 12.5px; color: var(--fg-dim); }
 .tools-line b { color: var(--yellow); }
 
-/* ---------- 思维导图 ---------- */
+/* ---------- 思维导图（放射状） ---------- */
 .mindmap {
-  position: relative;
   background: var(--bg-alt);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 24px 16px;
-  overflow-x: auto;
+  overflow: auto;
 }
 
-.mindmap svg.lines {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
+.mm-canvas { position: relative; }
 
-.mm-root-wrap { display: flex; justify-content: center; margin-bottom: 22px; }
+.mm-node { position: absolute; transform: translate(-50%, -50%); }
 
 .mm-root {
   background: linear-gradient(135deg, var(--accent), var(--accent-dim));
   color: #fff;
   font-weight: 700;
   font-size: 16px;
-  padding: 12px 22px;
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(79, 140, 255, 0.35);
-}
-
-.mm-level1 {
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
+  padding: 12px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(79, 140, 255, 0.45);
+  white-space: nowrap;
+  z-index: 2;
 }
 
 .mm-branch {
-  flex: 1 1 130px;
-  max-width: 200px;
   background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 12px 12px 10px;
-  text-align: center;
-}
-
-.mm-branch .mm-btitle {
-  display: inline-block;
-  background: rgba(79, 140, 255, 0.15);
-  color: var(--accent);
-  border: 1px solid rgba(79, 140, 255, 0.35);
+  border: 2px solid var(--accent);
+  color: var(--fg);
   font-weight: 700;
-  font-size: 13.5px;
-  padding: 4px 12px;
+  font-size: 14px;
+  padding: 7px 16px;
   border-radius: 20px;
-  margin-bottom: 10px;
+  white-space: nowrap;
+  z-index: 2;
 }
 
-.mm-children { display: flex; flex-direction: column; gap: 6px; }
+.mm-group {
+  background: var(--bg);
+  border: 2px dashed var(--accent);
+  color: var(--fg);
+  font-weight: 600;
+  font-size: 12.5px;
+  padding: 4px 12px;
+  border-radius: 16px;
+  white-space: nowrap;
+  z-index: 2;
+}
 
 .mm-child {
-  background: var(--bg-alt);
+  background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 4px 8px;
-  font-size: 12.5px;
   color: var(--fg-dim);
-  text-align: center;
+  font-size: 12px;
+  padding: 3px 9px;
+  border-radius: 13px;
+  white-space: nowrap;
+  z-index: 2;
 }
 
-.mm-child:hover { border-color: var(--accent); color: var(--fg); }
-
-.mm-child.hot { border-left: 3px solid var(--green); }
+.mm-branch:hover, .mm-group:hover, .mm-child:hover { border-color: var(--accent); color: var(--fg); }
 
 .view-switch { display: flex; gap: 8px; margin: 28px 0 4px; }
 .view-switch .btn { padding: 6px 16px; font-size: 13px; }
