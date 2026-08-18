@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>模型 MOD 制作（内容整理中）| MOD520 教程</title>
-  <meta name="description" content="模型 MOD 制作教程：提取/解包、编辑、注入、发布。内容整理中。">
+  <title>MOD 制作大框架 | MOD520 教程</title>
+  <meta name="description" content="MOD 制作大框架：制作、维护、发布/变现、灵感与模型来源。">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%234f8cff'/></svg>">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -24,7 +24,7 @@
     <aside class="sidebar" id="sidebar">
       <h4>总览</h4>
       <ul>
-        <li><a class="active" href="pipeline.html">模型 MOD 制作流程</a></li>
+        <li><a class="active" href="pipeline.html">MOD 制作大框架</a></li>
       </ul>
       <h4>入门</h4>
       <ul>
@@ -43,37 +43,85 @@
     </aside>
 
     <main class="content">
-      <h1>模型 MOD 制作</h1>
-      <blockquote class="warn">内容整理中 · 本页为模板占位，正式内容待填充。</blockquote>
-
-      <!-- ============ 在此填充正文 ============ -->
-      <!-- 参考骨架（可直接替换内容，保留或删除均可） -->
-
-      <div class="placeholder">
-        <b>概述</b>
-        <p>这里写一句话介绍本章讲什么、读者能收获什么。</p>
-      </div>
+      <h1>MOD 制作大框架</h1>
+      <p>MOD 制作不只是写代码，它是一条完整的链路：<strong>制作 → 维护 → 发布/变现</strong>，而灵感和模型来源贯穿始终。以下是整体框架，具体内容将逐步填充。</p>
 
       <div class="toc">
         <b>本章目录</b>
         <ol>
-          <li><a href="#sec-1">第 1 节标题</a></li>
-          <li><a href="#sec-2">第 2 节标题</a></li>
+          <li><a href="#make">制作</a></li>
+          <li><a href="#keep">维护</a></li>
+          <li><a href="#publish">发布 / 变现</a></li>
+          <li><a href="#inspire">灵感 / 模型来源</a></li>
         </ol>
       </div>
 
-      <h2 id="sec-1">第 1 节标题</h2>
-      <p>正文段落……</p>
+      <h2 id="make">制作</h2>
+      <p>制作是核心，包含「提取 → 修改 → 挂载」三步。</p>
 
-      <div class="placeholder">
-        <b>第 2 节标题</b>
-        <p>在下方放置示例代码、表格、注意事项等。</p>
+      <div class="card-grid">
+        <div class="card">
+          <h3>提取</h3>
+          <p>解包 · dump（3dmigoto）</p>
+        </div>
+        <div class="card">
+          <h3>修改</h3>
+          <p>模型 · 材质 · 动作 · 玩法/数值 · 特效</p>
+        </div>
+        <div class="card">
+          <h3>挂载</h3>
+          <p>PAK/SIGBYPASSER · 3DMIGOTO LOADER · MOD ENGINE</p>
+        </div>
       </div>
 
-      <blockquote class="tip">提示 / 技巧说明</blockquote>
-      <blockquote class="warn">注意 / 警告说明</blockquote>
+      <h3>提取</h3>
+      <ul>
+        <li><strong>解包</strong>：解密并解开游戏资源包，拿到原始文件。</li>
+        <li><strong>dump（3dmigoto）</strong>：运行时转储模型/贴图数据。</li>
+      </ul>
+      <div class="placeholder"><b>提取</b> 详细教程待填充……</div>
 
-      <!-- ============ 填充结束 ============ -->
+      <h3>修改</h3>
+      <ul>
+        <li><strong>模型</strong>：网格 · 骨骼/权重 · 顶点属性 · UV · 面朝向/法向</li>
+        <li><strong>材质</strong>：PBR · NPR · 特效材质 · .etc</li>
+        <li><strong>动作</strong></li>
+        <li><strong>玩法/数值</strong></li>
+        <li><strong>特效</strong></li>
+      </ul>
+      <div class="placeholder"><b>修改</b> 详细教程待填充……</div>
+
+      <h3>挂载</h3>
+      <ul>
+        <li><strong>PAK / SIGBYPASSER</strong>：替换 pak 资源 + 绕过签名校验。</li>
+        <li><strong>3DMIGOTO LOADER</strong>：运行时注入替换。</li>
+        <li><strong>MOD ENGINE</strong>：挂载式加载，不改原文件。</li>
+        <li><strong>.etc</strong>：其他加载方式。</li>
+      </ul>
+      <div class="placeholder"><b>挂载</b> 详细教程待填充……</div>
+
+      <h2 id="keep">维护</h2>
+      <ul>
+        <li><strong>修复</strong>：社区修复工具。</li>
+        <li><strong>开源</strong>：原文件放出，让他人自行修改。</li>
+      </ul>
+      <div class="placeholder"><b>维护</b> 详细教程待填充……</div>
+
+      <h2 id="publish">发布 / 变现</h2>
+      <div class="card-grid">
+        <div class="card"><h3>海外平台</h3><p>Nexus · Patreon · fanbox</p></div>
+        <div class="card"><h3>国内平台</h3><p>香蕉网 · 踩蘑菇 · 爱发电 · 视频网站</p></div>
+        <div class="card"><h3>私域 / 变现</h3><p>私域（QQ群）· 创作激励 · mod 定制私单</p></div>
+      </div>
+      <div class="placeholder"><b>发布 / 变现</b> 详细教程待填充……</div>
+
+      <h2 id="inspire">灵感 / 模型来源</h2>
+      <div class="card-grid">
+        <div class="card"><h3>内容灵感</h3><p>视频 · 影视/动漫 · 生活 · 本子</p></div>
+        <div class="card"><h3>模型来源</h3><p>pixiv · vrc · 解包 · 自购</p></div>
+        <div class="card"><h3>自建 / 委托</h3><p>自建模型 / 委托建模（含 AI）· 内外网全网各大模型网站</p></div>
+      </div>
+      <div class="placeholder"><b>灵感 / 模型来源</b> 详细教程待填充……</div>
 
       <nav class="chapter-nav">
         <span></span>

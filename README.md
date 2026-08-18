@@ -10,7 +10,7 @@
 
 | 章节 | 主题 | 文件 |
 | --- | --- | --- |
-| 模型 MOD 制作 | 提取/解包 → 编辑 → 注入 → 发布（内容整理中） | `tutorials/pipeline.html` |
+| MOD 制作大框架 | 制作 · 维护 · 发布/变现 · 灵感来源 | `tutorials/pipeline.html` |
 | 第 1 章 | 环境搭建 | `tutorials/chapter-1-environment.html` |
 | 第 2 章 | 第一个 MOD | `tutorials/chapter-2-first-mod.html` |
 | 第 3 章 | 数据与资源 | `tutorials/chapter-3-data-assets.html` |
