@@ -316,66 +316,18 @@ a:hover { text-decoration: underline; }
 
 #backTop.show { opacity: 1; pointer-events: auto; }
 
-/* ---------- 思维导图（放射状） ---------- */
-.mindmap {
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: auto;
-}
-
-.mm-canvas { position: relative; }
-
-.mm-node { position: absolute; transform: translate(-50%, -50%); }
-
-.mm-root {
-  background: linear-gradient(135deg, var(--accent), var(--accent-dim));
-  color: #fff;
-  font-weight: 700;
-  font-size: 16px;
-  padding: 12px 24px;
-  border-radius: 12px;
-  box-shadow: 0 4px 18px rgba(79, 140, 255, 0.45);
-  white-space: nowrap;
-  z-index: 2;
-}
-
-.mm-branch {
-  background: var(--bg);
-  border: 2px solid var(--accent);
-  color: var(--fg);
-  font-weight: 700;
-  font-size: 14px;
-  padding: 7px 16px;
-  border-radius: 20px;
-  white-space: nowrap;
-  z-index: 2;
-}
-
-.mm-group {
-  background: var(--bg);
-  border: 2px dashed var(--accent);
-  color: var(--fg);
-  font-weight: 600;
-  font-size: 12.5px;
-  padding: 4px 12px;
-  border-radius: 16px;
-  white-space: nowrap;
-  z-index: 2;
-}
-
-.mm-child {
-  background: var(--bg);
-  border: 1px solid var(--border);
+/* ---------- 模板占位 ---------- */
+.placeholder {
+  border: 1.5px dashed var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin: 18px 0;
   color: var(--fg-dim);
-  font-size: 12px;
-  padding: 3px 9px;
-  border-radius: 13px;
-  white-space: nowrap;
-  z-index: 2;
+  font-size: 14px;
 }
 
-.mm-branch:hover, .mm-group:hover, .mm-child:hover { border-color: var(--accent); color: var(--fg); }
+.placeholder b { color: var(--accent); }
+.placeholder p { margin: 4px 0; }
 
 /* ---------- 响应式 ---------- */
 @media (max-width: 900px) {
