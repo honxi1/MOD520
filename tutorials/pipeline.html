@@ -44,65 +44,80 @@
 
     <main class="content">
       <h1>MOD 制作大框架</h1>
-      <p>MOD 制作不只是写代码，它是一条完整的链路：<strong>制作 → 维护 → 发布/变现</strong>，而灵感和模型来源贯穿始终。以下是整体框架，具体内容将逐步填充。</p>
+      <p>MOD 制作不只是写代码，它是一条完整链路：<strong>制作 → 维护 → 发布/变现</strong>。本站主要覆盖三系游戏：<strong>魂系</strong>（法环 / 只狼 / 黑魂）、<strong>米哈游系</strong>（原神 / 崩坏）、<strong>UE 引擎游戏</strong>（装甲核心6 / 铁拳8 等）。同一套流程，各游戏工具链不同，下文对号入座。</p>
 
       <div class="toc">
         <b>本章目录</b>
         <ol>
-          <li><a href="#make">制作</a></li>
+          <li><a href="#toolchain">三系游戏工具链总览</a></li>
+          <li><a href="#make">制作（提取 → 修改 → 挂载）</a></li>
           <li><a href="#keep">维护</a></li>
           <li><a href="#publish">发布 / 变现</a></li>
           <li><a href="#inspire">灵感 / 模型来源</a></li>
         </ol>
       </div>
 
-      <h2 id="make">制作</h2>
-      <p>制作是核心，包含「提取 → 修改 → 挂载」三步。</p>
-
+      <h2 id="toolchain">三系游戏工具链总览</h2>
       <div class="card-grid">
         <div class="card">
-          <h3>提取</h3>
-          <p>解包 · dump（3dmigoto）</p>
+          <h3>魂系（法环 / 只狼 / 黑魂）</h3>
+          <p>解包 WitchyBND · 挂载 Mod Engine 2 / PAK+SigBypasser</p>
         </div>
         <div class="card">
-          <h3>修改</h3>
-          <p>模型 · 材质 · 动作 · 玩法/数值 · 特效</p>
+          <h3>米哈游系（原神 / 崩坏）</h3>
+          <p>帧转储 3dmigoto · 注入 3dmigoto Loader（GIMI）</p>
         </div>
         <div class="card">
-          <h3>挂载</h3>
-          <p>PAK/SIGBYPASSER · 3DMIGOTO LOADER · MOD ENGINE</p>
+          <h3>UE 引擎（AC6 / 铁拳8 等）</h3>
+          <p>解包 FModel + aesfinder · 挂载 repak 打包 .pak 进 ~mods</p>
         </div>
       </div>
 
-      <h3>提取</h3>
-      <ul>
-        <li><strong>解包</strong>：解密并解开游戏资源包，拿到原始文件。</li>
-        <li><strong>dump（3dmigoto）</strong>：运行时转储模型/贴图数据。</li>
-      </ul>
-      <div class="placeholder"><b>提取</b> 详细教程待填充……</div>
+      <h2 id="make">制作</h2>
+      <p>核心三步：<strong>提取 → 修改 → 挂载</strong>，各游戏对照如下。</p>
 
-      <h3>修改</h3>
-      <ul>
-        <li><strong>模型</strong>：网格 · 骨骼/权重 · 顶点属性 · UV · 面朝向/法向</li>
-        <li><strong>材质</strong>：PBR · NPR · 特效材质 · .etc</li>
-        <li><strong>动作</strong></li>
-        <li><strong>玩法/数值</strong></li>
-        <li><strong>特效</strong></li>
-      </ul>
-      <div class="placeholder"><b>修改</b> 详细教程待填充……</div>
+      <table>
+        <tr>
+          <th>环节</th>
+          <th>魂系（法环/只狼/黑魂）</th>
+          <th>米哈游系（原神/崩坏）</th>
+          <th>UE 引擎（AC6/铁拳8）</th>
+        </tr>
+        <tr>
+          <td><strong>提取 / 解包</strong></td>
+          <td>WitchyBND + SoulsFormats 解 .bnd/.dcx，导出 .flver 模型与 .tpf 贴图</td>
+          <td>3dmigoto 帧转储 dump，运行时抓模型与贴图</td>
+          <td>FModel 解 .pak；aesfinder / 密钥表定位 AES Key</td>
+        </tr>
+        <tr>
+          <td><strong>修改 · 模型</strong></td>
+          <td>FLVER 导入 Blender / 3ds Max，处理网格、骨骼权重、UV、法向</td>
+          <td>3dmigoto 导出网格 → Blender 处理 → 重新导入</td>
+          <td>UModel/UEViewer 导出 .glb/.fbx → Blender 处理</td>
+        </tr>
+        <tr>
+          <td><strong>修改 · 材质贴图</strong></td>
+          <td>.tpf/.dds 贴图，.mtb 材质参数，PS 编辑</td>
+          <td>.ini 缓冲配置 + .dds/.png 贴图替换</td>
+          <td>Texture2D 导出 png → PS 编辑 → 重新打包</td>
+        </tr>
+        <tr>
+          <td><strong>挂载</strong></td>
+          <td>Mod Engine 2 挂载；法环另可用 PAK + SigBypasser</td>
+          <td>3dmigoto Loader（GIMI）注入，免改原文件</td>
+          <td>repak/UnrealPak 打包 .pak → 游戏根目录 ~mods</td>
+        </tr>
+      </table>
 
-      <h3>挂载</h3>
-      <ul>
-        <li><strong>PAK / SIGBYPASSER</strong>：替换 pak 资源 + 绕过签名校验。</li>
-        <li><strong>3DMIGOTO LOADER</strong>：运行时注入替换。</li>
-        <li><strong>MOD ENGINE</strong>：挂载式加载，不改原文件。</li>
-        <li><strong>.etc</strong>：其他加载方式。</li>
-      </ul>
-      <div class="placeholder"><b>挂载</b> 详细教程待填充……</div>
+      <blockquote class="tip">
+        通用心法：提取是把素材拿到手，修改是加工素材，挂载是让游戏读到你改完的东西——三系游戏都能套进这个流程，差别只在工具。
+      </blockquote>
+
+      <div class="placeholder"><b>制作 · 各环节详细教程待填充</b>（提取/修改/挂载，含 Blender 绑骨权重、材质贴图、PAK 打包等）</div>
 
       <h2 id="keep">维护</h2>
       <ul>
-        <li><strong>修复</strong>：社区修复工具。</li>
+        <li><strong>修复</strong>：社区修复工具；游戏更新导致失效时的兼容处理。</li>
         <li><strong>开源</strong>：原文件放出，让他人自行修改。</li>
       </ul>
       <div class="placeholder"><b>维护</b> 详细教程待填充……</div>
