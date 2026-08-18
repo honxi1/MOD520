@@ -44,83 +44,9 @@
 
     <main class="content">
       <h1>模型 MOD 制作流程总览</h1>
-      <p>一条完整模型 MOD 的诞生，核心就四步：<strong>提取/解包 → 编辑 → 注入 → 发布</strong>。下方思维导图展示全貌，线性流程给出每一步的明细。</p>
+      <p>一条完整模型 MOD 的诞生，核心就四步：<strong>提取/解包 → 编辑 → 注入 → 发布</strong>。</p>
 
-      <div class="toc">
-        <b>流程速览</b>
-        <ol>
-          <li><a href="#s1">提取 / 解包</a></li>
-          <li><a href="#s2">编辑（模型 · 贴图）</a></li>
-          <li><a href="#s3">注入</a></li>
-          <li><a href="#s4">发布</a></li>
-        </ol>
-      </div>
-
-      <h2 id="mindmap-sec">思维导图</h2>
       <div class="mindmap" id="mindmap"></div>
-
-      <div class="view-switch">
-        <a class="btn primary" href="#mindmap-sec">思维导图</a>
-        <a class="btn ghost" href="#s1">线性分步详解</a>
-      </div>
-
-      <div class="pipeline">
-
-        <section class="stage" id="s1">
-          <div class="stage-head"><span class="stage-num">1</span><h2 class="stage-title">提取 / 解包</h2></div>
-          <p class="stage-sub">锁定目标引擎 → 破解/解包 → 抓取网格与贴图。</p>
-          <div class="items">
-            <div class="item"><b>目标引擎</b><span>Unity · UE · Source · RE · FromSoft（只狼/法环）</span></div>
-            <div class="item tag"><b>aesfinder</b><span>定位加密资源（如 UE .pak）的密钥</span></div>
-            <div class="item"><b>帧转储 dump</b><span>运行时转储内存/顶点数据</span></div>
-            <div class="item tag"><b>Ninja Ripper</b><span>挂接 DirectX，抓取网格 mesh</span></div>
-            <div class="item"><b>网格 mesh 提取</b><span>解包后导出模型与 UV</span></div>
-          </div>
-          <p class="tools-line">常用：<b>aesfinder</b>、<b>Ninja Ripper</b>、<b>3dmigoto Loader</b>、各引擎专用解包器</p>
-        </section>
-
-        <div class="arrow">▼</div>
-
-        <section class="stage" id="s2">
-          <div class="stage-head"><span class="stage-num">2</span><h2 class="stage-title">编辑（模型 · 贴图）</h2></div>
-          <p class="stage-sub">整理网格与权重 → 重做贴图材质 → 可选动画。</p>
-          <div class="items">
-            <div class="item"><b>模型处理</b><span>权重重做 · 权重传递 · 骨骼权重 · 骨骼改名 · 权重改名 · 骨骼合并插件 · 改名脚本 · 无绑骨</span></div>
-            <div class="item"><b>3D 软件</b><span>Blender（泛用）· 3ds Max（专业）· ZBrush（雕刻高模）· 布料模拟/服装 UV</span></div>
-            <div class="item"><b>贴图与材质</b><span>基础色 · 金属度 · 粗糙度 · 环境光遮蔽 · 发光颜色 · 发光度 · 透明度/遮罩 · 法线贴图 · 凹凸 · 普通材质 · SSS 贴 · MOD 加密</span></div>
-            <div class="item"><b>贴图软件</b><span>Photoshop · paint.net</span></div>
-            <div class="item"><b>动作</b><span>骨骼动画 · 逐帧动画</span></div>
-          </div>
-          <p class="tools-line">3D 软件：<b>Blender</b>（泛用性好）、<b>3ds Max</b>（专业性强）、<b>ZBrush</b>（雕刻高模）；贴图用 <b>Photoshop / paint.net</b></p>
-        </section>
-
-        <div class="arrow">▼</div>
-
-        <section class="stage" id="s3">
-          <div class="stage-head"><span class="stage-num">3</span><h2 class="stage-title">注入</h2></div>
-          <p class="stage-sub">把成品装回游戏，验证替换生效。</p>
-          <div class="items">
-            <div class="item tag"><b>Mod Engine</b><span>以挂载方式加载，无需改原文件</span></div>
-            <div class="item tag"><b>3dmigoto Loader</b><span>运行时替换模型/贴图</span></div>
-            <div class="item"><b>备份原文件</b><span>出错可一键还原</span></div>
-          </div>
-        </section>
-
-        <div class="arrow">▼</div>
-
-        <section class="stage" id="s4">
-          <div class="stage-head"><span class="stage-num">4</span><h2 class="stage-title">发布</h2></div>
-          <p class="stage-sub">选好平台，附上预览图与安装说明。</p>
-          <div class="items">
-            <div class="item"><b>N 网</b><span>Nexus Mods，全球主流平台</span></div>
-            <div class="item"><b>香蕉网</b><span>国内游戏 MOD 社区</span></div>
-            <div class="item"><b>爱发电</b><span>收费/赞助分发</span></div>
-            <div class="item"><b>视频网站</b><span>演示预览 + 引导下载</span></div>
-            <div class="item"><b>踩蘑菇等社区</b><span>论坛发帖交流</span></div>
-          </div>
-        </section>
-
-      </div>
 
       <blockquote class="tip">
         核心流程：<strong>提取/解包 → 编辑 → 注入 → 发布</strong>。解包用 aesfinder / Ninja Ripper，模型处理在 Blender / 3ds Max，贴图在 Photoshop / paint.net，最终用 Mod Engine / 3dmigoto Loader 注入。
