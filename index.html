@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MOD520 · MOD 制作教程</title>
-  <meta name="description" content="MOD 制作教程：面向魂系（法环/只狼/黑魂）、米哈游系（原神/崩坏）、UE 引擎游戏的三系模型 MOD 制作大框架。">
+  <meta name="description" content="MOD 制作教程：面向魂系（法环/只狼/黑魂）、米哈游系（原神/崩坏）、UE 引擎、卡普空 RE 引擎与老引擎 MT 的模型 MOD 制作大框架。">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%234f8cff'/></svg>">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -38,11 +38,12 @@
     <main class="content">
       <section class="hero">
         <h1>MOD 制作教程</h1>
-        <p class="tagline">面向魂系 · 米哈游系 · UE 引擎游戏的模型 MOD 制作教程。</p>
+        <p class="tagline">面向魂系 · 米哈游系 · UE 引擎 · 卡普空系游戏的模型 MOD 制作教程。</p>
         <div class="badges">
           <span class="badge">魂系 法环/只狼/黑魂</span>
           <span class="badge">米哈游 原神/崩坏</span>
-          <span class="badge">UE 引擎游戏</span>
+          <span class="badge">UE 引擎</span>
+          <span class="badge">卡普空 RE / MT</span>
         </div>
         <div class="actions">
           <a class="btn primary" href="tutorials/pipeline.html">查看大框架</a>
@@ -77,31 +78,39 @@
       </section>
 
       <section>
-        <h2>三系游戏工具链</h2>
+        <h2>各系游戏工具链</h2>
         <table>
           <tr>
             <th>环节</th>
             <th>魂系</th>
             <th>米哈游系</th>
             <th>UE 引擎</th>
+            <th>RE 引擎</th>
+            <th>老引擎 MT</th>
           </tr>
           <tr>
             <td>提取 / 解包</td>
             <td>WitchyBND + SoulsFormats</td>
             <td>3dmigoto 帧转储 dump</td>
             <td>FModel + aesfinder</td>
+            <td>REFramework dump</td>
+            <td>WorldChunkTool</td>
           </tr>
           <tr>
             <td>模型处理</td>
             <td>FLVER → Blender / 3ds Max</td>
             <td>3dmigoto 导出 → Blender</td>
             <td>UModel → .glb/.fbx → Blender</td>
+            <td>RE 引擎模型插件 → Blender</td>
+            <td>MHW 模型插件 → Blender</td>
           </tr>
           <tr>
             <td>挂载</td>
             <td>Mod Engine 2 / PAK+SigBypasser</td>
             <td>3dmigoto Loader（GIMI）</td>
             <td>repak 打包 .pak → ~mods</td>
+            <td>REFramework + Fluffy</td>
+            <td>nativePC 覆盖</td>
           </tr>
         </table>
       </section>
