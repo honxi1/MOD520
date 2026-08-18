@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>流程总览 · 模型 MOD 制作 | MOD520 教程</title>
+  <meta name="description" content="模型 MOD 制作全流程总览：逆向解包、模型与绑骨、贴图材质、挂载与发布。">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%234f8cff'/></svg>">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="read-progress" id="readProgress"></div>
+
+  <header class="topbar">
+    <button class="menu-btn" id="menuBtn" aria-label="菜单">☰</button>
+    <a class="logo" href="../index.html"><span class="dot"></span>MOD520 教程</a>
+    <nav class="nav-links">
+      <a href="../index.html">首页</a>
+      <a href="chapter-1-environment.html">教程</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <h4>总览</h4>
+      <ul>
+        <li><a class="active" href="pipeline.html">模型 MOD 制作流程</a></li>
+      </ul>
+      <h4>入门</h4>
+      <ul>
+        <li><a href="chapter-1-environment.html">第 1 章 · 环境搭建</a></li>
+        <li><a href="chapter-2-first-mod.html">第 2 章 · 第一个 MOD</a></li>
+      </ul>
+      <h4>核心</h4>
+      <ul>
+        <li><a href="chapter-3-data-assets.html">第 3 章 · 数据与资源</a></li>
+        <li><a href="chapter-4-advanced.html">第 4 章 · 进阶功能</a></li>
+      </ul>
+      <h4>发布</h4>
+      <ul>
+        <li><a href="chapter-5-packaging.html">第 5 章 · 打包与发布</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h1>模型 MOD 制作流程总览</h1>
+      <p>一条完整模型 MOD 的诞生，大致走「选游戏 → 逆向解包 → 模型与绑骨 → 贴图材质 → 动画 → 挂载 → 发布」七步。以下总览按实际制作顺序展开，点开对应章节可看详细步骤。</p>
+
+      <div class="toc">
+        <b>流程速览</b>
+        <ol>
+          <li><a href="#s1">目标游戏与引擎</a></li>
+          <li><a href="#s2">逆向解包 · 提取模型</a></li>
+          <li><a href="#s3">模型与绑骨</a></li>
+          <li><a href="#s4">贴图与材质</a></li>
+          <li><a href="#s5">动画（可选）</a></li>
+          <li><a href="#s6">挂载与加载</a></li>
+          <li><a href="#s7">发布与分享</a></li>
+        </ol>
+      </div>
+
+      <div class="pipeline">
+
+        <section class="stage" id="s1">
+          <div class="stage-head"><span class="stage-num">1</span><h2 class="stage-title">目标游戏与引擎</h2></div>
+          <p class="stage-sub">先确认游戏的技术栈，决定用什么工具解包。</p>
+          <div class="items">
+            <div class="item"><b>Unity</b><span>资源常见于 .assets / AssetBundle</span></div>
+            <div class="item"><b>UE 虚幻引擎</b><span>.pak 打包，需先解密再解包</span></div>
+            <div class="item"><b>Source 起源引擎</b><span>.vpk 资源包</span></div>
+            <div class="item"><b>RE 引擎</b><span>卡普空游戏专用格式</span></div>
+            <div class="item"><b>FromSoft</b><span>只狼 · 艾尔登法环 等</span></div>
+            <div class="item"><b>其他单机游戏</b><span>按具体引擎选择工具链</span></div>
+          </div>
+        </section>
+
+        <div class="arrow">▼</div>
+
+        <section class="stage" id="s2">
+          <div class="stage-head"><span class="stage-num">2</span><h2 class="stage-title">逆向解包 · 提取模型</h2></div>
+          <p class="stage-sub">拿到加密资源 → 解包 → 抓取网格（mesh）。</p>
+          <div class="items">
+            <div class="item tag"><b>aesfinder</b><span>定位游戏文件的 AES 加密密钥</span></div>
+            <div class="item"><b>帧转储 dump</b><span>在运行时转储内存/顶点数据</span></div>
+            <div class="item tag"><b>Ninja Ripper</b><span>挂接 DirectX，抓取网格 mesh</span></div>
+            <div class="item"><b>网格 mesh 提取</b><span>解包后导出模型与 UV</span></div>
+          </div>
+          <p class="tools-line">常见工具：<b>aesfinder</b>、<b>Ninja Ripper</b>、<b>3dmigoto Loader</b> 及各引擎专用解包器</p>
+        </section>
+
+        <div class="arrow">▼</div>
+
+        <section class="stage" id="s3">
+          <div class="stage-head"><span class="stage-num">3</span><h2 class="stage-title">模型与绑骨</h2></div>
+          <p class="stage-sub">整理网格 → 处理骨骼权重 → 必要时重新绑骨。</p>
+          <div class="items">
+            <div class="item"><b>网格处理</b><span>清理、合并、修复法线</span></div>
+            <div class="item"><b>绑骨 / 骨骼权重</b><span>模型跟随骨骼正确变形</span></div>
+            <div class="item"><b>权重重做</b><span>修正不合理的权重分布</span></div>
+            <div class="item"><b>权重传递</b><span>从一个模型复制到另一个</span></div>
+            <div class="item"><b>骨骼改名</b><span>对齐不同骨架的命名</span></div>
+            <div class="item"><b>权重改名</b><span>权重组与骨骼名保持一致</span></div>
+            <div class="item"><b>骨骼合并插件</b><span>合并多个骨架为一套</span></div>
+            <div class="item"><b>改名脚本</b><span>批量处理骨骼/权重命名</span></div>
+            <div class="item warn"><b>无绑骨方案</b><span>静态模型或直接替换，跳过绑骨</span></div>
+          </div>
+          <p class="tools-line">3D 软件：<b>Blender</b>（泛用性好）、<b>3ds Max</b>（专业性强）、<b>ZBrush</b>（雕刻高模）；可选 <b>布料模拟 · 服装设计 · UV</b></p>
+        </section>
+
+        <div class="arrow">▼</div>
+
+        <section class="stage" id="s4">
+          <div class="stage-head"><span class="stage-num">4</span><h2 class="stage-title">贴图与材质</h2></div>
+          <p class="stage-sub">制作 PBR 贴图通道，挂接材质，必要时加密。</p>
+          <div class="items">
+            <div class="item"><b>基础色</b><span>Base Color</span></div>
+            <div class="item"><b>金属度</b><span>Metallic</span></div>
+            <div class="item"><b>粗糙度</b><span>Roughness</span></div>
+            <div class="item"><b>环境光遮蔽</b><span>Ambient Occlusion</span></div>
+            <div class="item"><b>发光颜色</b><span>Emissive Color</span></div>
+            <div class="item"><b>发光度</b><span>Emissive Intensity</span></div>
+            <div class="item"><b>透明度 / 透明遮罩</b><span>Alpha / Alpha Mask</span></div>
+            <div class="item"><b>法线贴图</b><span>Normal Map</span></div>
+            <div class="item"><b>凹凸</b><span>Bump</span></div>
+            <div class="item"><b>普通材质</b><span>基础着色</span></div>
+            <div class="item warn"><b>SSS 贴图</b><span>次表面散射，皮肤/布料用</span></div>
+            <div class="item warn"><b>MOD 加密</b><span>保护贴图资源不被直接提取</span></div>
+          </div>
+          <p class="tools-line">贴图软件：<b>Blender</b>、<b>Photoshop</b>、<b>paint.net</b></p>
+        </section>
+
+        <div class="arrow">▼</div>
+
+        <section class="stage" id="s5">
+          <div class="stage-head"><span class="stage-num">5</span><h2 class="stage-title">动画（可选）</h2></div>
+          <p class="stage-sub">模型带动作需求时才进入此步。</p>
+          <div class="items">
+            <div class="item"><b>骨骼动画</b><span>骨骼驱动的关键帧动画</span></div>
+            <div class="item"><b>逐帧动画</b><span>序列帧播放，适合特效/纸片</span></div>
+            <div class="item"><b>动作导入</b><span>复用或移植游戏内动作</span></div>
+          </div>
+        </section>
+
+        <div class="arrow">▼</div>
+
+        <section class="stage" id="s6">
+          <div class="stage-head"><span class="stage-num">6</span><h2 class="stage-title">挂载与加载</h2></div>
+          <p class="stage-sub">把成品装回游戏，验证替换是否生效。</p>
+          <div class="items">
+            <div class="item tag"><b>Mod Engine</b><span>以挂载方式加载，无需改原文件</span></div>
+            <div class="item tag"><b>3dmigoto Loader</b><span>运行时替换模型/贴图</span></div>
+            <div class="item"><b>备份原文件</b><span>出错可一键还原</span></div>
+          </div>
+        </section>
+
+        <div class="arrow">▼</div>
+
+        <section class="stage" id="s7">
+          <div class="stage-head"><span class="stage-num">7</span><h2 class="stage-title">发布与分享</h2></div>
+          <p class="stage-sub">选好平台，附上预览图与安装说明。</p>
+          <div class="items">
+            <div class="item"><b>N 网</b><span>Nexus Mods，全球主流平台</span></div>
+            <div class="item"><b>香蕉网</b><span>国内游戏 MOD 社区</span></div>
+            <div class="item"><b>爱发电</b><span>收费/赞助分发</span></div>
+            <div class="item"><b>视频网站</b><span>演示预览 + 引导下载</span></div>
+            <div class="item"><b>踩蘑菇等社区</b><span>论坛发帖交流</span></div>
+          </div>
+        </section>
+
+      </div>
+
+      <blockquote class="tip">
+        工具选型参考：解包用 <strong>aesfinder / Ninja Ripper / 引擎专用解包器</strong>，模型处理在 <strong>Blender / 3ds Max</strong>，贴图在 <strong>Photoshop / paint.net</strong>，最终用 <strong>Mod Engine / 3dmigoto Loader</strong> 挂载。
+      </blockquote>
+
+      <nav class="chapter-nav">
+        <span></span>
+        <a class="nav-item next" href="chapter-1-environment.html">
+          <div class="nav-label">下一步</div>
+          <div class="nav-title">第 1 章 · 环境搭建 →</div>
+        </a>
+      </nav>
+    </main>
+  </div>
+
+  <footer class="footer">© 2026 MOD520 · 纯 HTML/CSS/JS · 托管于 GitHub Pages</footer>
+  <button id="backTop" aria-label="返回顶部">↑</button>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

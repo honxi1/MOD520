@@ -10,6 +10,7 @@
 
 | 章节 | 主题 | 文件 |
 | --- | --- | --- |
+| 流程总览 | 模型 MOD 制作流程 | `tutorials/pipeline.html` |
 | 第 1 章 | 环境搭建 | `tutorials/chapter-1-environment.html` |
 | 第 2 章 | 第一个 MOD | `tutorials/chapter-2-first-mod.html` |
 | 第 3 章 | 数据与资源 | `tutorials/chapter-3-data-assets.html` |
