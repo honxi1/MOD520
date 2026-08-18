@@ -1,21 +1,17 @@
-# MOD520 · MOD 开发教程
+# MOD520 · MOD 制作教程
 
-从零开始的 MOD 开发教程站点，使用纯 HTML / CSS / JS 构建，托管于 GitHub Pages。
+面向三系游戏的模型 MOD 制作教程站点：魂系（法环/只狼/黑魂）、米哈游系（原神/崩坏）、UE 引擎游戏（装甲核心6/铁拳8 等）。纯 HTML / CSS / JS 构建，托管于 GitHub Pages。
 
 ## 访问
 
-站点地址：`https://honxi1.github.io/MOD520/`
+站点地址：`https://honxi1.github.io/MOD520/`（自定义域名 `mod520.com`）
 
-## 教程章节
+## 页面
 
-| 章节 | 主题 | 文件 |
+| 页面 | 说明 | 文件 |
 | --- | --- | --- |
-| MOD 制作大框架 | 制作 · 维护 · 发布/变现 · 灵感来源 | `tutorials/pipeline.html` |
-| 第 1 章 | 环境搭建 | `tutorials/chapter-1-environment.html` |
-| 第 2 章 | 第一个 MOD | `tutorials/chapter-2-first-mod.html` |
-| 第 3 章 | 数据与资源 | `tutorials/chapter-3-data-assets.html` |
-| 第 4 章 | 进阶功能 | `tutorials/chapter-4-advanced.html` |
-| 第 5 章 | 打包与发布 | `tutorials/chapter-5-packaging.html` |
+| 首页 | 站点入口 | `index.html` |
+| MOD 制作大框架 | 三系游戏工具链对照 | `tutorials/pipeline.html` |
 
 ## 本地预览
 
@@ -25,12 +21,10 @@
 python -m http.server 8000
 ```
 
-## 如何贡献
+## 如何新增内容
 
-新增章节时：
-
-1. 在 `tutorials/` 下新建 `chapter-N-xxx.html`，复制已有章节的骨架（顶栏、侧边栏、页脚）。
-2. 在 `index.html` 的卡片区和所有章节的侧边栏中登记新章节。
+1. 在 `tutorials/` 下新建页面，复制 `pipeline.html` 的骨架（顶栏、侧边栏、页脚）。
+2. 在 `index.html` 的卡片区和 `pipeline.html` 的侧边栏中登记新页面。
 3. 保证相对路径正确（`../assets/`）。
 
 ## 部署
