@@ -34,4 +34,10 @@ python -m http.server 8000
 
 ## 部署
 
-推送到 `main` 分支即可，GitHub Pages 从分支根目录发布（需在仓库 Settings → Pages 中开启）。
+站点从 `gh-pages` 分支发布（分支部署，根目录）。改动推送到 `gh-pages` 后自动上线；`main` 分支保留开发中的源文件。
+
+```bash
+git push origin gh-pages
+```
+
+自定义域名 `mod520.com` 通过仓库根目录的 `CNAME` 文件绑定。
