@@ -37,12 +37,12 @@
 
     <main class="content">
       <h1>MOD 制作大框架</h1>
-      <p>MOD 制作不只是写代码，它是一条完整链路：<strong>制作 → 维护 → 发布/变现</strong>。本站主要覆盖三系：<strong>魂系</strong>（法环 / 只狼 / 黑魂，FromSoft 自家引擎）、<strong>米哈游系</strong>（原神 / 崩坏）、<strong>UE 引擎游戏</strong>（铁拳8 / FF7 重制 / 剑星 等）。同一套流程，各游戏工具链不同，下文对号入座。</p>
+      <p>MOD 制作不只是写代码，它是一条完整链路：<strong>制作 → 维护 → 发布/变现</strong>。本站覆盖几大系：<strong>魂系</strong>（法环 / 只狼 / 黑魂，FromSoft 自家引擎）、<strong>米哈游系</strong>（原神 / 崩坏）、<strong>UE 引擎</strong>（铁拳8 / FF7 重制 / 剑星 等）、<strong>卡普空 RE 引擎</strong>（怪猎崛起 / 生化危机 / 鬼泣5）、<strong>卡普空老引擎 MT</strong>（怪猎世界 / 鬼泣4）。同一套流程，各游戏工具链不同，下文对号入座。</p>
 
       <div class="toc">
         <b>本章目录</b>
         <ol>
-          <li><a href="#toolchain">三系游戏工具链总览</a></li>
+          <li><a href="#toolchain">各系游戏工具链总览</a></li>
           <li><a href="#make">制作（提取 → 修改 → 挂载）</a></li>
           <li><a href="#keep">维护</a></li>
           <li><a href="#publish">发布 / 变现</a></li>
@@ -50,7 +50,7 @@
         </ol>
       </div>
 
-      <h2 id="toolchain">三系游戏工具链总览</h2>
+      <h2 id="toolchain">各系游戏工具链总览</h2>
       <div class="card-grid">
         <div class="card">
           <h3>魂系（法环 / 只狼 / 黑魂）</h3>
@@ -64,6 +64,14 @@
           <h3>UE 引擎（铁拳8 / FF7 重制 等）</h3>
           <p>解包 FModel + aesfinder · 挂载 repak 打包 .pak 进 ~mods</p>
         </div>
+        <div class="card">
+          <h3>卡普空 RE 引擎（怪猎崛起/生化/鬼泣5）</h3>
+          <p>REFramework dump · 挂载 REFramework + Fluffy Mod Manager</p>
+        </div>
+        <div class="card">
+          <h3>卡普空老引擎 MT（怪猎世界/鬼泣4）</h3>
+          <p>WorldChunkTool 解包 · 挂载 nativePC 覆盖</p>
+        </div>
       </div>
 
       <h2 id="make">制作</h2>
@@ -75,35 +83,45 @@
           <th>魂系（法环/只狼/黑魂）</th>
           <th>米哈游系（原神/崩坏）</th>
           <th>UE 引擎（铁拳8/FF7 重制）</th>
+          <th>RE 引擎（怪猎崛起/生化）</th>
+          <th>老引擎 MT（怪猎世界）</th>
         </tr>
         <tr>
           <td><strong>提取 / 解包</strong></td>
           <td>WitchyBND + SoulsFormats 解 .bnd/.dcx，导出 .flver 模型与 .tpf 贴图</td>
           <td>3dmigoto 帧转储 dump，运行时抓模型与贴图</td>
           <td>FModel 解 .pak；aesfinder / 密钥表定位 AES Key</td>
+          <td>REFramework dump；解 .arc/.pak 资源</td>
+          <td>WorldChunkTool 解 .chunk 资源包</td>
         </tr>
         <tr>
           <td><strong>修改 · 模型</strong></td>
           <td>FLVER 导入 Blender / 3ds Max，处理网格、骨骼权重、UV、法向</td>
           <td>3dmigoto 导出网格 → Blender 处理 → 重新导入</td>
           <td>UModel/UEViewer 导出 .glb/.fbx → Blender 处理</td>
+          <td>RE 引擎模型导入/导出插件（Blender）</td>
+          <td>MHW 模型导入插件（Blender）</td>
         </tr>
         <tr>
           <td><strong>修改 · 材质贴图</strong></td>
           <td>.tpf/.dds 贴图，.mtb 材质参数，PS 编辑</td>
           <td>.ini 缓冲配置 + .dds/.png 贴图替换</td>
           <td>Texture2D 导出 png → PS 编辑 → 重新打包</td>
+          <td>.tex/.dds 贴图，材质参数调整</td>
+          <td>贴图导出为 .dds → PS 编辑</td>
         </tr>
         <tr>
           <td><strong>挂载</strong></td>
           <td>Mod Engine 2 挂载；法环另可用 PAK + SigBypasser</td>
           <td>3dmigoto Loader（GIMI）注入，免改原文件</td>
           <td>repak/UnrealPak 打包 .pak → 游戏根目录 ~mods</td>
+          <td>REFramework（dinput8.dll 代理加载）+ Fluffy Mod Manager</td>
+          <td>游戏目录 nativePC 文件夹覆盖</td>
         </tr>
       </table>
 
       <blockquote class="tip">
-        通用心法：提取是把素材拿到手，修改是加工素材，挂载是让游戏读到你改完的东西——三系游戏都能套进这个流程，差别只在工具。
+        通用心法：提取是把素材拿到手，修改是加工素材，挂载是让游戏读到你改完的东西——各系游戏都能套进这个流程，差别只在工具。
       </blockquote>
 
       <div class="placeholder"><b>制作 · 各环节详细教程待填充</b>（提取/修改/挂载，含 Blender 绑骨权重、材质贴图、PAK 打包等）</div>
