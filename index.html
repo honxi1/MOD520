@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MOD520 · MOD 制作教程</title>
-  <meta name="description" content="MOD 制作教程：面向魂系（法环/只狼/黑魂）、米哈游系（原神/崩坏）、UE 引擎、卡普空 RE 引擎与老引擎 MT 的模型 MOD 制作大框架。">
+  <meta name="description" content="MOD520：把分散的中文 MOD 制作知识，整理成一条走得通的路。覆盖魂系、米哈游系、UE 引擎与卡普空系游戏。">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%234f8cff'/></svg>">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -16,29 +16,29 @@
     <a class="logo" href="index.html"><span class="dot"></span>MOD520 教程</a>
     <nav class="nav-links">
       <a href="index.html">首页</a>
-      <a href="tutorials/pipeline.html">大框架</a>
+      <a href="tutorials/pipeline.html">愿景与规划</a>
     </nav>
   </header>
 
   <div class="layout">
     <aside class="sidebar" id="sidebar">
-      <h4>总览</h4>
+      <h4>关于本站</h4>
       <ul>
-        <li><a href="tutorials/pipeline.html">MOD 制作大框架</a></li>
+        <li><a href="tutorials/pipeline.html">愿景与规划</a></li>
       </ul>
-      <h4>内容规划中</h4>
+      <h4>路线图</h4>
       <ul>
-        <li><a href="tutorials/pipeline.html">提取 / 解包</a></li>
-        <li><a href="tutorials/pipeline.html">修改（模型 · 材质）</a></li>
-        <li><a href="tutorials/pipeline.html">挂载</a></li>
-        <li><a href="tutorials/pipeline.html">维护 · 发布/变现</a></li>
+        <li><a href="tutorials/pipeline.html#why">为什么做这个站</a></li>
+        <li><a href="tutorials/pipeline.html#vision">我们想做成什么样</a></li>
+        <li><a href="tutorials/pipeline.html#roadmap">路线图</a></li>
+        <li><a href="tutorials/pipeline.html#join">参与共建</a></li>
       </ul>
     </aside>
 
     <main class="content">
       <section class="hero">
-        <h1>MOD 制作教程</h1>
-        <p class="tagline">面向魂系 · 米哈游系 · UE 引擎 · 卡普空系游戏的模型 MOD 制作教程。</p>
+        <h1>MOD520</h1>
+        <p class="tagline">把分散在各处的中文 MOD 制作知识，整理成一条看得懂、走得通的路。</p>
         <div class="badges">
           <span class="badge">魂系 法环/只狼/黑魂</span>
           <span class="badge">米哈游 原神/崩坏</span>
@@ -46,73 +46,45 @@
           <span class="badge">卡普空 RE / MT</span>
         </div>
         <div class="actions">
-          <a class="btn primary" href="tutorials/pipeline.html">查看大框架</a>
+          <a class="btn primary" href="tutorials/pipeline.html">了解愿景与规划</a>
           <a class="btn ghost" href="https://github.com/honxi1/MOD520">GitHub 仓库</a>
         </div>
       </section>
 
       <section>
-        <h2>覆盖内容</h2>
+        <h2>我们要做什么</h2>
+        <p>从「我想改个模型」到「我的 MOD 发布在 Nexus 上」，中间的每一步都值得被讲清楚。教程将沿这条链路展开：</p>
         <div class="card-grid">
-          <a class="card" href="tutorials/pipeline.html">
-            <span class="num">总览</span>
-            <h3>MOD 制作大框架</h3>
-            <p>制作 · 维护 · 发布/变现 · 灵感与模型来源。</p>
-          </a>
           <div class="card fam-souls">
-            <span class="num">魂系</span>
+            <span class="num">Step 1</span>
             <h3>提取 / 解包</h3>
-            <p>WitchyBND · 3dmigoto dump · FModel + aesfinder。</p>
+            <p>WitchyBND · 3dmigoto 帧转储 · FModel + aesfinder。</p>
           </div>
           <div class="card fam-miyo">
-            <span class="num">米哈游系</span>
+            <span class="num">Step 2</span>
             <h3>修改</h3>
-            <p>模型与绑骨权重 · 材质贴图 · 动作 · 特效。</p>
+            <p>模型网格 · 绑骨权重 · 材质贴图 · 动作特效。</p>
           </div>
           <div class="card fam-ue">
-            <span class="num">UE 引擎</span>
+            <span class="num">Step 3</span>
             <h3>挂载</h3>
             <p>Mod Engine 2 · 3dmigoto Loader · PAK/repak。</p>
+          </div>
+          <div class="card fam-re">
+            <span class="num">Step 4</span>
+            <h3>发布 / 变现</h3>
+            <p>Nexus · 爱发电 · 视频网站 · 私域运营。</p>
           </div>
         </div>
       </section>
 
       <section>
-        <h2>各系游戏工具链</h2>
-        <table>
-          <tr>
-            <th>环节</th>
-            <th>魂系</th>
-            <th>米哈游系</th>
-            <th>UE 引擎</th>
-            <th>RE 引擎</th>
-            <th>老引擎 MT</th>
-          </tr>
-          <tr>
-            <td>提取 / 解包</td>
-            <td>WitchyBND + SoulsFormats</td>
-            <td>3dmigoto 帧转储 dump</td>
-            <td>FModel + aesfinder</td>
-            <td>REFramework dump</td>
-            <td>WorldChunkTool</td>
-          </tr>
-          <tr>
-            <td>模型处理</td>
-            <td>FLVER → Blender / 3ds Max</td>
-            <td>3dmigoto 导出 → Blender</td>
-            <td>UModel → .glb/.fbx → Blender</td>
-            <td>RE 引擎模型插件 → Blender</td>
-            <td>MHW 模型插件 → Blender</td>
-          </tr>
-          <tr>
-            <td>挂载</td>
-            <td>Mod Engine 2 / PAK+SigBypasser</td>
-            <td>3dmigoto Loader（GIMI）</td>
-            <td>repak 打包 .pak → ~mods</td>
-            <td>REFramework + Fluffy</td>
-            <td>nativePC 覆盖</td>
-          </tr>
-        </table>
+        <h2>现在进展</h2>
+        <ul>
+          <li>站点已上线（<code>mod520.com</code>），整体框架确立。</li>
+          <li>各篇教程按路线图逐步填充中，详见<a href="tutorials/pipeline.html#roadmap">路线图</a>。</li>
+          <li>欢迎<a href="https://github.com/honxi1/MOD520">提 Issue / PR</a> 参与共建。</li>
+        </ul>
       </section>
     </main>
   </div>

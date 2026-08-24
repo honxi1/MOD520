@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MOD 制作大框架 | MOD520 教程</title>
-  <meta name="description" content="MOD 制作大框架：制作、维护、发布/变现、灵感与模型来源。">
+  <title>愿景与规划 | MOD520 教程</title>
+  <meta name="description" content="MOD520 的愿景与路线图：把分散的中文 MOD 制作知识，整理成一条走得通的路。">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%234f8cff'/></svg>">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -16,143 +16,104 @@
     <a class="logo" href="../index.html"><span class="dot"></span>MOD520 教程</a>
     <nav class="nav-links">
       <a href="../index.html">首页</a>
-      <a href="pipeline.html">大框架</a>
+      <a href="pipeline.html">愿景与规划</a>
     </nav>
   </header>
 
   <div class="layout">
     <aside class="sidebar" id="sidebar">
-      <h4>总览</h4>
+      <h4>关于本站</h4>
       <ul>
-        <li><a class="active" href="pipeline.html">MOD 制作大框架</a></li>
+        <li><a class="active" href="pipeline.html">愿景与规划</a></li>
       </ul>
-      <h4>内容规划中</h4>
+      <h4>路线图</h4>
       <ul>
-        <li><a href="pipeline.html">提取 / 解包</a></li>
-        <li><a href="pipeline.html">修改（模型 · 材质）</a></li>
-        <li><a href="pipeline.html">挂载</a></li>
-        <li><a href="pipeline.html">维护 · 发布/变现</a></li>
+        <li><a href="#why">为什么做这个站</a></li>
+        <li><a href="#vision">我们想做成什么样</a></li>
+        <li><a href="#roadmap">路线图</a></li>
+        <li><a href="#join">参与共建</a></li>
       </ul>
     </aside>
 
     <main class="content">
-      <h1>MOD 制作大框架</h1>
-      <p>MOD 制作不只是写代码，它是一条完整链路：<strong>制作 → 维护 → 发布/变现</strong>。本站覆盖几大系：<strong>魂系</strong>（法环 / 只狼 / 黑魂，FromSoft 自家引擎）、<strong>米哈游系</strong>（原神 / 崩坏）、<strong>UE 引擎</strong>（铁拳8 / FF7 重制 / 剑星 等）、<strong>卡普空 RE 引擎</strong>（怪猎崛起 / 生化危机 / 鬼泣5）、<strong>卡普空老引擎 MT</strong>（怪猎世界 / 鬼泣4）。同一套流程，各游戏工具链不同，下文对号入座。</p>
+      <h1>愿景与规划</h1>
+      <p>MOD520 想做一件事：<strong>把分散在各处的中文 MOD 制作知识，整理成一条看得懂、走得通的路。</strong>从「我想改个模型」到「我的 MOD 发布在 Nexus 上」，中间的每一步都值得被讲清楚。</p>
 
-      <div class="toc">
-        <b>本章目录</b>
-        <ol>
-          <li><a href="#toolchain">各系游戏工具链总览</a></li>
-          <li><a href="#make">制作（提取 → 修改 → 挂载）</a></li>
-          <li><a href="#keep">维护</a></li>
-          <li><a href="#publish">发布 / 变现</a></li>
-          <li><a href="#inspire">灵感 / 模型来源</a></li>
-        </ol>
-      </div>
+      <h2 id="why">为什么做这个站</h2>
+      <ul>
+        <li>中文 MOD 教程零散：QQ 群文件、过期网盘链接、零碎视频，新人找不到入口。</li>
+        <li>工具链门槛高：解包、绑骨权重、贴图、挂载，每一环都劝退过很多人。</li>
+        <li>游戏更新快：版本一变教程就失效，需要有人持续维护。</li>
+      </ul>
 
-      <h2 id="toolchain">各系游戏工具链总览</h2>
+      <h2 id="vision">我们想做成什么样</h2>
       <div class="card-grid">
         <div class="card fam-souls">
-          <span class="num">魂系</span>
-          <h3>魂系（法环 / 只狼 / 黑魂）</h3>
-          <p>解包 WitchyBND · 挂载 Mod Engine 2 / PAK+SigBypasser</p>
+          <span class="num">系统化</span>
+          <h3>一条完整链路</h3>
+          <p>提取 → 修改 → 挂载 → 发布，不跳步、不断层。</p>
         </div>
         <div class="card fam-miyo">
-          <span class="num">米哈游系</span>
-          <h3>米哈游系（原神 / 崩坏）</h3>
-          <p>帧转储 3dmigoto · 注入 3dmigoto Loader（GIMI）</p>
+          <span class="num">多游戏</span>
+          <h3>覆盖主流系别</h3>
+          <p>魂系 · 米哈游系 · UE 引擎 · 卡普空 RE/MT。</p>
         </div>
         <div class="card fam-ue">
-          <span class="num">UE 引擎</span>
-          <h3>UE 引擎（铁拳8 / FF7 重制 等）</h3>
-          <p>解包 FModel + aesfinder · 挂载 repak 打包 .pak 进 ~mods</p>
+          <span class="num">实战向</span>
+          <h3>跟着做就能出东西</h3>
+          <p>每篇教程以实际产出为目标，不放空话。</p>
         </div>
         <div class="card fam-re">
-          <span class="num">RE 引擎</span>
-          <h3>卡普空 RE 引擎（怪猎崛起/生化/鬼泣5）</h3>
-          <p>REFramework dump · 挂载 REFramework + Fluffy Mod Manager</p>
+          <span class="num">持续维护</span>
+          <h3>跟得上版本</h3>
+          <p>游戏更新后同步修订，标注适用版本。</p>
         </div>
         <div class="card fam-mt">
-          <span class="num">老引擎 MT</span>
-          <h3>卡普空老引擎 MT（怪猎世界/鬼泣4）</h3>
-          <p>WorldChunkTool 解包 · 挂载 nativePC 覆盖</p>
+          <span class="num">开放</span>
+          <h3>社区共建</h3>
+          <p>内容开源，欢迎投稿与纠错。</p>
         </div>
       </div>
 
-      <h2 id="make">制作</h2>
-      <p>核心三步：<strong>提取 → 修改 → 挂载</strong>，各游戏对照如下。</p>
+      <h2 id="roadmap">路线图</h2>
+      <div class="timeline">
+        <div class="tl-item done">
+          <div class="tl-head"><h3>站点与大框架</h3><span class="pill done">已完成</span></div>
+          <p>站点上线（mod520.com），确立制作 / 维护 / 发布变现 / 灵感来源的整体结构。</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-head"><h3>提取 / 解包篇</h3><span class="pill plan">规划中</span></div>
+          <p>WitchyBND 解包魂系资源 · 3dmigoto 帧转储 · FModel + aesfinder 解 UE .pak。</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-head"><h3>模型修改篇</h3><span class="pill plan">规划中</span></div>
+          <p>Blender 实操：网格处理、骨骼权重、UV 与法向，含各系模型的导入导出。</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-head"><h3>材质贴图篇</h3><span class="pill plan">规划中</span></div>
+          <p>PBR / NPR 材质、贴图替换与制作、发光与透明效果。</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-head"><h3>挂载发布篇</h3><span class="pill plan">规划中</span></div>
+          <p>Mod Engine 2 · GIMI · repak 打包，以及各平台投稿规范。</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-head"><h3>维护与变现篇</h3><span class="pill plan">规划中</span></div>
+          <p>版本更新后的修复流程、开源策略、平台变现与私域运营。</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-head"><h3>社区共建</h3><span class="pill doing">长期</span></div>
+          <p>开放投稿入口，收录优质外部教程，形成中文 MOD 学习网络。</p>
+        </div>
+      </div>
 
-      <table>
-        <tr>
-          <th>环节</th>
-          <th>魂系（法环/只狼/黑魂）</th>
-          <th>米哈游系（原神/崩坏）</th>
-          <th>UE 引擎（铁拳8/FF7 重制）</th>
-          <th>RE 引擎（怪猎崛起/生化）</th>
-          <th>老引擎 MT（怪猎世界）</th>
-        </tr>
-        <tr>
-          <td><strong>提取 / 解包</strong></td>
-          <td>WitchyBND + SoulsFormats 解 .bnd/.dcx，导出 .flver 模型与 .tpf 贴图</td>
-          <td>3dmigoto 帧转储 dump，运行时抓模型与贴图</td>
-          <td>FModel 解 .pak；aesfinder / 密钥表定位 AES Key</td>
-          <td>REFramework dump；解 .arc/.pak 资源</td>
-          <td>WorldChunkTool 解 .chunk 资源包</td>
-        </tr>
-        <tr>
-          <td><strong>修改 · 模型</strong></td>
-          <td>FLVER 导入 Blender / 3ds Max，处理网格、骨骼权重、UV、法向</td>
-          <td>3dmigoto 导出网格 → Blender 处理 → 重新导入</td>
-          <td>UModel/UEViewer 导出 .glb/.fbx → Blender 处理</td>
-          <td>RE 引擎模型导入/导出插件（Blender）</td>
-          <td>MHW 模型导入插件（Blender）</td>
-        </tr>
-        <tr>
-          <td><strong>修改 · 材质贴图</strong></td>
-          <td>.tpf/.dds 贴图，.mtb 材质参数，PS 编辑</td>
-          <td>.ini 缓冲配置 + .dds/.png 贴图替换</td>
-          <td>Texture2D 导出 png → PS 编辑 → 重新打包</td>
-          <td>.tex/.dds 贴图，材质参数调整</td>
-          <td>贴图导出为 .dds → PS 编辑</td>
-        </tr>
-        <tr>
-          <td><strong>挂载</strong></td>
-          <td>Mod Engine 2 挂载；法环另可用 PAK + SigBypasser</td>
-          <td>3dmigoto Loader（GIMI）注入，免改原文件</td>
-          <td>repak/UnrealPak 打包 .pak → 游戏根目录 ~mods</td>
-          <td>REFramework（dinput8.dll 代理加载）+ Fluffy Mod Manager</td>
-          <td>游戏目录 nativePC 文件夹覆盖</td>
-        </tr>
-      </table>
-
-      <blockquote class="tip">
-        通用心法：提取是把素材拿到手，修改是加工素材，挂载是让游戏读到你改完的东西——各系游戏都能套进这个流程，差别只在工具。
-      </blockquote>
-
-      <div class="placeholder"><b>制作 · 各环节详细教程待填充</b>（提取/修改/挂载，含 Blender 绑骨权重、材质贴图、PAK 打包等）</div>
-
-      <h2 id="keep">维护</h2>
+      <h2 id="join">参与共建</h2>
+      <p>本站内容全部开源在 <a href="https://github.com/honxi1/MOD520">GitHub · honxi1/MOD520</a>：</p>
       <ul>
-        <li><strong>修复</strong>：社区修复工具；游戏更新导致失效时的兼容处理。</li>
-        <li><strong>开源</strong>：原文件放出，让他人自行修改。</li>
+        <li><strong>纠错</strong>：发现教程里过时或错误的内容，直接提 Issue。</li>
+        <li><strong>投稿</strong>：写好一篇教程，提 Pull Request 即可上线。</li>
+        <li><strong>建议</strong>：想看哪方面的内容，欢迎留言规划。</li>
       </ul>
-      <div class="placeholder"><b>维护</b> 详细教程待填充……</div>
-
-      <h2 id="publish">发布 / 变现</h2>
-      <div class="card-grid">
-        <div class="card"><h3>海外平台</h3><p>Nexus · Patreon · fanbox</p></div>
-        <div class="card"><h3>国内平台</h3><p>香蕉网 · 踩蘑菇 · 爱发电 · 视频网站</p></div>
-        <div class="card"><h3>私域 / 变现</h3><p>私域（QQ群）· 创作激励 · mod 定制私单</p></div>
-      </div>
-      <div class="placeholder"><b>发布 / 变现</b> 详细教程待填充……</div>
-
-      <h2 id="inspire">灵感 / 模型来源</h2>
-      <div class="card-grid">
-        <div class="card"><h3>内容灵感</h3><p>视频 · 影视/动漫 · 生活 · 本子</p></div>
-        <div class="card"><h3>模型来源</h3><p>pixiv · vrc · 解包 · 自购</p></div>
-        <div class="card"><h3>自建 / 委托</h3><p>自建模型 / 委托建模（含 AI）· 内外网全网各大模型网站</p></div>
-      </div>
-      <div class="placeholder"><b>灵感 / 模型来源</b> 详细教程待填充……</div>
 
       <nav class="chapter-nav">
         <span></span>
