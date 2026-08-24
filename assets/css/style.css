@@ -471,6 +471,59 @@ a:hover { text-decoration: underline; }
 .placeholder b { color: var(--accent); }
 .placeholder p { margin: 4px 0; }
 
+/* ---------- 路线图时间线 ---------- */
+.timeline {
+  position: relative;
+  margin: 26px 0;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+}
+
+.tl-item { position: relative; margin-bottom: 22px; }
+
+.tl-item::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(91, 140, 255, 0.65);
+}
+
+.tl-item.done::before { background: var(--green); box-shadow: 0 0 12px rgba(58, 208, 120, 0.6); }
+
+.tl-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+.tl-item h3 { margin: 0; font-size: 16px; color: var(--fg); }
+
+.pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 1px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+.pill.done { color: var(--green); background: rgba(58, 208, 120, 0.12); border: 1px solid rgba(58, 208, 120, 0.35); }
+.pill.doing { color: var(--accent); background: rgba(91, 140, 255, 0.12); border: 1px solid rgba(91, 140, 255, 0.35); }
+.pill.plan { color: var(--fg-dim); background: rgba(154, 165, 184, 0.1); border: 1px solid var(--border); }
+
+.tl-item p { margin: 4px 0 0; color: var(--fg-dim); font-size: 14px; }
+
 /* ---------- 动效 ---------- */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(14px); }

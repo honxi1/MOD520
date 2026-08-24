@@ -1,6 +1,10 @@
 # MOD520 · MOD 制作教程
 
-面向三系游戏的模型 MOD 制作教程站点：魂系（法环/只狼/黑魂）、米哈游系（原神/崩坏）、UE 引擎游戏（装甲核心6/铁拳8 等）。纯 HTML / CSS / JS 构建，托管于 GitHub Pages。
+把分散在各处的中文 MOD 制作知识，整理成一条看得懂、走得通的路。
+
+覆盖：魂系（法环/只狼/黑魂）· 米哈游系（原神/崩坏）· UE 引擎 · 卡普空系（RE 引擎 / MT Framework）。
+
+纯 HTML / CSS / JS 构建，托管于 GitHub Pages。
 
 ## 访问
 
@@ -10,8 +14,8 @@
 
 | 页面 | 说明 | 文件 |
 | --- | --- | --- |
-| 首页 | 站点入口 | `index.html` |
-| MOD 制作大框架 | 三系游戏工具链对照 | `tutorials/pipeline.html` |
+| 首页 | 站点入口与制作链路总览 | `index.html` |
+| 愿景与规划 | 站点愿景、路线图、共建方式 | `tutorials/pipeline.html` |
 
 ## 本地预览
 
@@ -24,7 +28,7 @@ python -m http.server 8000
 ## 如何新增内容
 
 1. 在 `tutorials/` 下新建页面，复制 `pipeline.html` 的骨架（顶栏、侧边栏、页脚）。
-2. 在 `index.html` 的卡片区和 `pipeline.html` 的侧边栏中登记新页面。
+2. 在 `index.html` 的卡片区和侧边栏中登记新页面。
 3. 保证相对路径正确（`../assets/`）。
 
 ## 部署
