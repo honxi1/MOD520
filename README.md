@@ -2,7 +2,7 @@
 
 把分散在各处的中文 MOD 制作知识，整理成一条看得懂、走得通的路。
 
-覆盖：魂系（法环/只狼/黑魂）· 米哈游系（原神/崩坏）· UE 引擎 · 卡普空系（RE 引擎 / MT Framework）。
+覆盖：魂系（法环/只狼/黑魂）· UE 引擎 · 卡普空系（RE 引擎 / MT Framework），工具链含 3dmigoto。
 
 纯 HTML / CSS / JS 构建，托管于 GitHub Pages。
 
